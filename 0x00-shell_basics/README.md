@@ -1,0 +1,1 @@
+script 0 gives you the current working directory.
