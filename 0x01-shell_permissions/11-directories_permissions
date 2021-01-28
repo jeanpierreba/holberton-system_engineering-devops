@@ -1,3 +1,3 @@
 #!/bin/bash
-chmod -R u+rwX,go+X .
+chmod -R u+X,go+X .
 
