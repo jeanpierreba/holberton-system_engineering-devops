@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# "Stops" the process of the 7th file
+
+pgrep -f 7-highlander | xargs kill -9
