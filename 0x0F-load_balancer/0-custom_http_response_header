@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Installs nginx and configures it
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+new_string="server_name _;\n\trewrite ^\/redirect_me youtube.com permanent;"
+new_string2="\n\tadd_header X-Served-By \$hostname;"
+new_string3="\n\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}"
+sed -i "s/server_name _;/$new_string$new_string2$new_string3/" /etc/nginx/sites-enabled/default
+service nginx start
