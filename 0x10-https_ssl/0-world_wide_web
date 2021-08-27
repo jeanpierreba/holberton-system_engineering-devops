@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# display information about subdomains.
+# display information about subdomains
 # shellcheck disable=SC2086
 info_Domain () {
     A=$(dig $2.$1 | awk '/ANSWER SECTION:/{getline;print;}')
