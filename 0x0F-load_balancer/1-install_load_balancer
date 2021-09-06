@@ -6,7 +6,7 @@ sudo apt-get -y update && sudo apt-get -y install haproxy
 HAPROXY_PATH="/etc/haproxy/haproxy.cfg"
 
 CONFIG="
-frontend <ip-servidor-1>
+frontend 35.185.114.184
     bind 0:80
     default_backend backend_config
 
