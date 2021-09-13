@@ -3,7 +3,6 @@
 
 import json
 import requests
-import sys
 
 
 if __name__ == "__main__":
@@ -16,7 +15,7 @@ if __name__ == "__main__":
     for user in users:
         tasks_list = []
         for task in todos:
-            if task.get("userId") == user.get("id"):
+            if task.get("userId") == user.get('id'):
                 task_dict = {"username": user.get("username"),
                              "task": task.get("title"),
                              "completed": task.get("completed")}
