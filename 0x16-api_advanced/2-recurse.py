@@ -13,7 +13,7 @@ def recurse(subreddit, hot_list=[], count=0, after=None):
                                           "after": after},
                                   headers={"User-agent": "My-User-Agent"},
                                   allow_redirects=False)
-    if subreddit_info.status_code >= 400:
+    if subreddit_info.status_code != 200:
         return None
     list_hot = hot_list + [top.get("data").get("title")
                            for top in subreddit_info.json()
