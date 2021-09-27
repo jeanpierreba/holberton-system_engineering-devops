@@ -4,12 +4,13 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=""):
+def recurse(subreddit, hot_list=[], count=0, after=None):
     """Returns a list containing the titles of all hot articles
     for a given subreddit """
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     subreddit_info = requests.get(url,
-                                  params={"after": after},
+                                  params={"count": count,
+                                          "after": after},
                                   headers={"User-agent": "My-User-Agent"},
                                   allow_redirects=False)
     if subreddit_info.status_code >= 400:
