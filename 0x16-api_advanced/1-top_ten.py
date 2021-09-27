@@ -7,8 +7,8 @@ import requests
 def top_ten(subreddit):
     """ queries the Reddit API and prints the titles
     of the first 10 hot posts listed for a given subreddit """
-    subreddit_info = requests.get("https://www.reddit.com/r/{}/hot.json?limit=10"
-                                  .format(subreddit),
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    subreddit_info = requests.get(url,
                                   headers={"User-agent": "My-User-Agent"},
                                   allow_redirects=False)
     if subreddit_info.status_code >= 300:
